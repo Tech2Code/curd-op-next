@@ -6,7 +6,7 @@ export default function Home() {
     <div className="App">
       <div className="container mx-auto">
         <h3 className="text-center  mt-20 text-base leading-8 text-black font-bold tracking-wide uppercase">
-          CRUD with React Context API and Hooks
+          CRUD with Next Context API and Hooks
         </h3>
         <div className="flex items-center mt-24 mb-10">
           <div className="flex-grow text-left px-4 py-2 m-2">

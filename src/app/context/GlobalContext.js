@@ -20,14 +20,9 @@ const GlobalProvider = ({ children }) => {
         }
     }
 
-
-    // console.log(employees,"emp")
-
     useEffect(()=>{
         getData()
       },[])
-
-    // const [selectedUser, setSelectedUser] = useState([]);
 
     const addEmployee = (newEmployee) => {
         setEmployees([...employees, newEmployee])
@@ -48,11 +43,6 @@ const GlobalProvider = ({ children }) => {
             body: JSON.stringify(updatedEmp)
         });
     }
-
-    // const updatedEployee = (id) => {
-    //     const updatedEployee = employees.filter((emp) => emp.id == id)[0];
-    //     setSelectedUser(updatedEployee);
-    // }
 
     return (
         <GlobalContext.Provider value={({ employees, getData, addEmployee, deleteEmployee, editEmployee })}>

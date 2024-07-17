@@ -9,7 +9,7 @@ const page = ({ params }) => {
     const slug = params.slug;
 
     const { editEmployee, employees, getData } = useContext(GlobalContext);
-    const [editDtl, setEditDtl] = useState({ id: null, name: '', designation: '', location: '' });
+    const [editDtl, setEditDtl] = useState({});
 
     useEffect(() => {
         const employeeToEdit = employees.find(emp => emp.id == slug);
@@ -18,7 +18,6 @@ const page = ({ params }) => {
         }
     }, [employees, slug]);
 
-
     const handleOnChange = (userKey, value) => setEditDtl({
         ...editDtl,
         [userKey]: value
@@ -26,8 +25,10 @@ const page = ({ params }) => {
 
     const onSubmit = (e, id) => {
         e.preventDefault();
-        editEmployee(id, editDtl);
-        push('/')
+        if(confirm('Click Ok to update employee details?')){
+            editEmployee(id, editDtl);
+            push('/')
+        }        
     };
 
     return (
